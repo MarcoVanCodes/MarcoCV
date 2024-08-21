@@ -1,0 +1,177 @@
+/* Custom CSS Variables */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #2980b9;
+    --background-color: #f0f8ff; /* Azul muy tenue */
+    --font-color: #34495e;
+    --font-family: 'Roboto', sans-serif;
+    --highlight-color: #e74c3c;
+    --hover-background-color: #d0e9ff; /* Color azul claro para pasar en cima */
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--font-color);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    align-items: flex-start; /* Alineación a la parte superior */
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+header .photo {
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+header .photo img {
+    width: 120px; 
+    height: 120px; 
+    border-radius: 8px; /* Bordecitos good */
+    border: 3px solid white;
+    transition: transform 0.5s ease;
+}
+
+header .photo img:hover {
+    transform: scale(1.1);
+}
+
+header .header-text {
+    flex-grow: 1;
+}
+
+nav {
+    background-color: var(--secondary-color);
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--highlight-color);
+    text-decoration: underline;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: var(--background-color);
+}
+
+.left-column, .right-column, .full-width {
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.left-column, .right-column {
+    width: 45%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.left-column:hover, .right-column:hover, .full-width:hover {
+    transform: scale(1.05);
+    background-color: var(--hover-background-color);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+main h2 {
+    color: var(--primary-color);
+    font-size: 20px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+main h2:after {
+    content: "";
+    width: 50px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.skill {
+    margin-bottom: 15px;
+}
+
+.skill p {
+    margin: 0;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.percentage {
+    float: right;
+    font-weight: normal;
+}
+
+.progress-bar {
+    background-color: var(--background-color);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5px;
+    height: 10px;
+    position: relative;
+}
+
+.progress {
+    background-color: var(--primary-color);
+    height: 100%;
+    transition: width 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main section {
+    animation: slideIn 0.6s ease forwards;
+}
